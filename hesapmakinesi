@@ -1,0 +1,115 @@
+package glsmshspmkns;
+
+import java.util.Scanner;
+
+public class Glsmshspmkns {
+    
+    public static int toplama (int a, int b) {
+        return (a + b);
+    }
+public static int toplama (int a, int b, int c) {
+    return (a + b + c);
+}    
+public static int cıkarma (int a, int  b){
+    return(a - b);
+}
+   public static double bolme (int a, int b){
+       return ((double)a / b);
+   }
+   public static int carpma (int a, int b){
+       return (a * b);
+   }
+   public static int carpma (int a, int b, int c){
+       return(a * b * c);
+   }
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("************");
+        System.out.println("Hesap Makinemize Hoşgeldiniz..\n"
+                         + "1.Toplama\n"
+                         + "2.Çıkarma\n"
+                         + "3.Çarpma\n"
+                         + "4.Bölme\n"
+                         + "Çıkış İçin 'q' ya basın..");
+        System.out.println("************");
+        while(true){
+            System.out.print("İşlem Seçiniz : ");
+             String islem = s.nextLine();
+             if (islem.equals("q")) {
+                 System.out.println("Çıkış Yapılıyor..");
+                 break;
+             }
+             else if (islem.equals("1")) {
+                 System.out.println("Kaç Parametre Kullanmak İstersiniz? (2 veya 3)");
+                 int x = s.nextInt();
+                 if (x == 2){
+                     System.out.print("1. Sayı : ");
+                     int a = s.nextInt();
+                     System.out.print("2. Sayı : ");
+                     int b = s.nextInt();
+                     s.nextLine();
+                     System.out.println(toplama(a, b));
+                 }
+                 else if (x == 3){
+                     System.out.print("1. Sayı : ");
+                     int a = s.nextInt();
+                     System.out.print("2. Sayı : ");
+                     int b = s.nextInt();
+                     System.out.print("3. Sayı : ");
+                     int c = s.nextInt();
+                     s.nextLine();
+                     System.out.println("Toplam = " + toplama(a, b, c));
+                 }
+                 else {
+                     System.out.println("Geçersiz Parametre");
+                     s.nextLine();
+                 }
+             }
+             else if (islem.equals("2")) {
+                  System.out.print("1. Sayı : ");
+                                 int a = s.nextInt();
+                  System.out.print("2. Sayı : ");
+                                 int b = s.nextInt();
+                                 s.nextLine();
+                                 System.out.println("Sonuç = " + cıkarma(a, b));
+             }
+             else if (islem.equals("4")) {
+                  System.out.print("1. Sayı : ");
+                         int a = s.nextInt();
+                 System.out.print("2. Sayı : ");
+                         int b = s.nextInt();
+                         s.nextLine();
+                         System.out.println("Sonuç : " + (bolme(a, b)));
+             }
+              else if (islem.equals("3")) {
+                  System.out.println("Parametre sayısı giriniz..(2 veya 3)");
+                  String secim = s.nextLine();
+                  if (secim == "2") {
+                       System.out.print("1. Sayı : ");
+                         int a = s.nextInt();
+                 System.out.print("2. Sayı : ");
+                         int b = s.nextInt();
+                         s.nextLine();
+                         System.out.println("Sonuç : " + (carpma(a, b)));
+                  }
+                  else if (secim == "3") {
+                 System.out.print("1. Sayı : ");
+                         int a = s.nextInt();
+                 System.out.print("2. Sayı : ");
+                         int b = s.nextInt();
+                 System.out.print("3. Sayı : ");
+                         int c = s.nextInt();
+                         s.nextLine();
+                         System.out.println("Sonuç : " + (carpma(a, b, c)));
+                  }                  
+                  else {
+                      System.out.println("Geçersiz Parametre..");
+                      s.nextLine();
+                  }
+              }
+              else {
+                  System.out.println("Geçersiz İşlem..");
+              }        
+             }
+        }
+    }
